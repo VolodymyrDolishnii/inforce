@@ -18,10 +18,12 @@ export const EditProducts: React.FC<Props> = ({ lastId, changeLastId, addProduct
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
 
-        changeLastId(lastId + 1);
+        // const newId = lastId + 1;
+
+        // changeLastId(newId);
 
         const newProduct = {
-            id : lastId,
+            id : lastId + 1,
             imageUrl : imgURL.trim(),
             name : name.trim(),
             count : count.trim(),

@@ -22,7 +22,6 @@ function App() {
   useEffect(() => {
     getProducts()
       .then(response => {
-        setLastId(response[response.length - 1].id);
         setProducts(response); 
       });
   }, []);
@@ -31,6 +30,16 @@ function App() {
     getComments()
       .then(response => setComments(response));
   }, [])
+
+ useEffect(() => {
+    if (products.length === 0) {
+      setLastId(0);
+    } else {
+      setLastId(products[products.length - 1]?.id);
+    }
+ }, [products]);
+
+ console.log(products);
 
   return (
     <>

@@ -21,14 +21,15 @@ export const ProductList: React.FC<Props> = ({ products, comments, setProducts, 
 
     const deleteButton = (productId: number) => {
         const newProducts = products.filter(product => product.id !== productId);
-        setProducts(newProducts);
-
         deleteProduct(productId);
+        setProducts(newProducts);
     }
 
     useEffect(() => {
         if (isDelete === true) {
             deleteButton(id);
+            setDeleting(false);
+            setIsDelete(false);
         }
     }, [isDelete, id])
 
