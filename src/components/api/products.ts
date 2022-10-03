@@ -17,3 +17,7 @@ export const postProduct = (product: Product) => {
 export const deleteProduct = (productId: number) => {
     return items.delete(`/products/${productId}`);
 }
+
+export const getProduct = (id: number) => {
+    return items.get<Product>(`/products/${id}`);
+}

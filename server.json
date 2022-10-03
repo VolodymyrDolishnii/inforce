@@ -13,39 +13,27 @@
       "comments": []
     },
     {
-      "id": 2,
+      "id": 7,
       "imageUrl": "",
-      "name": "a",
-      "count": "a",
+      "name": "й",
+      "count": "й",
       "size": {
         "width": 200,
         "height": 200
       },
-      "weight": "ag",
+      "weight": "йg",
       "comments": []
     },
     {
-      "id": 3,
+      "id": 8,
       "imageUrl": "",
-      "name": "a",
-      "count": "a",
+      "name": "а",
+      "count": "а",
       "size": {
         "width": 200,
         "height": 200
       },
-      "weight": "ag",
-      "comments": []
-    },
-    {
-      "id": 4,
-      "imageUrl": "a",
-      "name": "a",
-      "count": "a",
-      "size": {
-        "width": 200,
-        "height": 200
-      },
-      "weight": "ag",
+      "weight": "аg",
       "comments": []
     }
   ],

@@ -44,7 +44,7 @@ function App() {
 
                 </Route>
 
-                <Route path='/:id' element={<ProductComponent />}>
+                <Route path='products/:id' element={<ProductComponent />}>
                 </Route>
               </Routes>
 

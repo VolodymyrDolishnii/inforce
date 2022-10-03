@@ -39,18 +39,22 @@ export const ProductList: React.FC<Props> = ({ products, comments, setProducts, 
                     key={product.id} 
                     className="product" 
                     style={{cursor: 'pointer'}}
-                    onClick={() => navigate(`/products/${product.id}`)}
                 >
                     <div className="productList__imageContainer" style={{
                         width: product.size.width, 
                         height: product.size.height, 
                         border: '1px solid black',
-                        borderRadius: '10px'
-                }}>
+                        borderRadius: '10px'}}
+                        onClick={() => navigate(`/products/${product.id}`)}    
+                    >
                         <img src={product.imageUrl} alt={product.name} width={product.size.width} height={product.size.height} className="product__image" />
                     </div>
                     <div className="product__info">
-                        <h2 className='product__name'>{product.name}</h2>
+                        <h2 
+                            className='product__name'
+                            onClick={() => navigate(`/products/${product.id}`)}
+                        >
+                                {product.name}</h2>
                         {/* <p className='product__count'>Count: {product.count}</p>
                         <p className='product__weight'>Weight: {product.weight}</p> */}
                         <button
