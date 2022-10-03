@@ -26,10 +26,10 @@ function App() {
       });
   }, []);
 
-  useEffect(() => {
-    getComments()
-      .then(response => setComments(response));
-  }, [])
+  // useEffect(() => {
+  //   getComments()
+  //     .then(response => setComments(response));
+  // }, [])
 
  useEffect(() => {
     if (products.length === 0) {

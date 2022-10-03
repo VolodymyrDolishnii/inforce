@@ -6,8 +6,8 @@ export const getProducts = () => {
     return items.get<Product[]>(`/products`);
 };
 
-export const getComments = () => {
-    return items.get<CommentType[]>(`/comments`);
+export const getComments = (productId: number) => {
+    return items.get<CommentType[]>(`/comments?productId=${productId}`);
 };
 
 export const postProduct = (product: Product) => {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProduct } from '../api/products';
 import { Product as ProductType } from '../types/Product';
+import { CommentList } from '../commentList/commentList';
 
 export const Product = () => {
     const { id } = useParams();
@@ -21,7 +22,7 @@ export const Product = () => {
             <h1>{product?.name}</h1>
             <p>Count: {product?.count}</p>
             <p>Weight: {product?.weight}</p>
-
+            <CommentList productId={product?.id}/>
         </>
     )
 }
