@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+      "name": "a",
+      "count": "a",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "ag",
+      "comments": []
+    },
+    {
+      "id": 2,
+      "imageUrl": "",
+      "name": "a",
+      "count": "a",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "ag",
+      "comments": []
+    },
+    {
+      "id": 3,
+      "imageUrl": "",
+      "name": "a",
+      "count": "a",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "ag",
+      "comments": []
+    },
+    {
+      "id": 4,
+      "imageUrl": "a",
+      "name": "a",
+      "count": "a",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "ag",
+      "comments": []
+    }
+  ],
+  "comments": []
+}

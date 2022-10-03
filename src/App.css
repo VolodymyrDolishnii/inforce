@@ -1,0 +1,86 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.productList {
+  padding: 30px;
+
+  display: flex;
+  gap: 50px;
+}
+
+.product {
+  border: 2px solid #fed766;
+  border-radius: 10px;
+  padding: 10px;
+
+  display: inline-block;
+  text-align: center;
+  
+  background-color: #e6e6ea;
+}
+
+.product__image {
+  border-radius: 10px;
+}
+
+.product__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product__name {
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.product__count {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+.addProduct {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  height: 100%;
+
+  border-left: 2px solid #e6e6ea;
+}
+
+.formText {
+  padding: 0;
+  margin: 0;
+}
+
+.forDeleting {
+  position: fixed;
+  top: 50%;
+  left: 35%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #fe4a49;
+
+  padding: 10px;
+}
+
+.forDeleting__buttons {
+  display: flex;
+  gap: 30px;
+}
