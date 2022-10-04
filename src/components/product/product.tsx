@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProduct } from '../api/products';
 import { Product as ProductType } from '../types/Product';
-import { CommentList } from '../CommentList/CommentList';
+import { CommentList } from '../commentList/commentList';
 import { CommentType } from '../types/CommentType';
 import { getComments } from '../api/products';
 

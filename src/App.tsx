@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { ProductList } from './components/ProductList/ProductList';
+import { ProductList } from './components/productList/productList';
 import { Product } from './components/types/Product';
 import { getProducts } from './components/api/products';
 import { AddProduct } from './components/AddProduct/AddProduct';
 import { Route, Routes } from 'react-router-dom';
-import { Product as ProductComponent } from './components/Product/Product';
+import { Product as ProductComponent } from './components/product/product';
 import { SortType } from './components/types/SortTypes';
 
 
