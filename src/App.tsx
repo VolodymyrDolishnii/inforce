@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { ProductList } from './components/productList/productList'
+import { ProductList } from './components/ProductList/ProductList';
 import { Product } from './components/types/Product';
 import { getProducts } from './components/api/products';
 // import { CommentType } from './components/types/CommentType';
-import { EditProducts } from './components/editProducts/editProducts';
+import { AddProduct } from './components/AddProduct/AddProduct';
 import { Route, Routes } from 'react-router-dom';
-import { Product as ProductComponent } from './components/product/product';
+import { Product as ProductComponent } from './components/Product/Product';
 
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
                 <Route path='/' element={
                   <>
                     <ProductList products={products} setProducts={setProducts} id={id} setId={setId}/>
-                    <EditProducts lastId={lastId} changeLastId={setLastId} addProduct={addProduct} />
+                    <AddProduct lastId={lastId} changeLastId={setLastId} addProduct={addProduct} />
                   </>
                 }>
 

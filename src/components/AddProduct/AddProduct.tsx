@@ -8,7 +8,7 @@ type Props = {
     addProduct: (x: Product) => void;
 }
 
-export const EditProducts: React.FC<Props> = ({ lastId, changeLastId, addProduct }) => {
+export const AddProduct: React.FC<Props> = ({ lastId, changeLastId, addProduct }) => {
     const [name, setName] = useState('');
     const [count, setCount] = useState('');
     const [weight, setWeight] = useState('');

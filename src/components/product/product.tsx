@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProduct } from '../api/products';
 import { Product as ProductType } from '../types/Product';
-import { CommentList } from '../commentList/commentList';
+import { CommentList } from '../CommentList/CommentList';
 import { CommentType } from '../types/CommentType';
 import { getComments } from '../api/products';
 
@@ -40,7 +40,7 @@ export const Product = () => {
                     borderRadius: '10px'
                 }}
                 >
-                    <img src={product?.imageUrl} alt={product?.name} width={product?.size.width} height={product?.size.height} />
+                    <img src={product?.imageUrl} alt={product?.name} width={product?.size.width} height={product?.size.height} style={{borderRadius: "10px", objectFit: 'cover'}} />
                 </div>
                 <h1>{product?.name}</h1>
                 <p>Count: {product?.count}</p>

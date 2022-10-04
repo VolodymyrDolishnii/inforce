@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { getComments } from '../api/products';
+import React, { useState } from 'react';
 import { CommentType } from '../types/CommentType';
 import { postComment, deleteComment } from '../api/products';
 import moment from 'moment';
@@ -45,7 +44,7 @@ export const CommentList: React.FC<Props> = ({ comments, setComments, addComment
             {comments.length === 0
                 ? <>
                     <p>No comments yet</p>
-                    <form className='addComment' onSubmit={handleSubmit}>
+                    <form className='addComment' onSubmit={(event) => handleSubmit(event)}>
                         <p>Enter your feedback</p>
                         <input type="text"
                             value={description}
@@ -68,6 +67,7 @@ export const CommentList: React.FC<Props> = ({ comments, setComments, addComment
                                 <span>{comment.date}</span>
                                 <button
                                     onClick={() => handleDelete(comment.id)}
+                                    style={{marginLeft: "10px"}}
                                 >
                                     Delete it
                                 </button>
@@ -80,7 +80,7 @@ export const CommentList: React.FC<Props> = ({ comments, setComments, addComment
                         >
                             Add Comment
                         </button>
-                        : <form className='addComment' onSubmit={() => handleSubmit}>
+                        : <form className='addComment' onSubmit={(event) => handleSubmit(event)}>
                             <p>Enter your feedback</p>
                             <input type="text"
                                 value={description}

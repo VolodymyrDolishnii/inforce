@@ -1,1 +1,1 @@
-export * from './commentList';
+export * from './CommentList';

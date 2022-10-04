@@ -2,11 +2,11 @@ import React from 'react';
 
 type Props = {
     setDeleting: (x: boolean) => void;
-    isDelete: boolean;
+
     setIsDelete: (x: boolean) => void;
 }
 
-export const ForDeleting: React.FC<Props> = ({ setDeleting, isDelete, setIsDelete }) => {
+export const DeleteModal: React.FC<Props> = ({ setDeleting, setIsDelete }) => {
     return (
         <div className='forDeleting'>
             <h2>Do you want to delete this item?</h2>

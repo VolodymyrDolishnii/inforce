@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { CommentType } from '../types/CommentType';
 import { Product } from '../types/Product';
 import { deleteProduct } from '../api/products';
-import { ForDeleting } from '../forDeleting/forDeleting';
+import { DeleteModal } from '../DeleteModal/DeleteModal';
 import { useNavigate } from 'react-router-dom';
 
 type Props = {
@@ -47,7 +46,9 @@ export const ProductList: React.FC<Props> = ({ products, setProducts, id, setId 
                         borderRadius: '10px'}}
                         onClick={() => navigate(`/products/${product.id}`)}    
                     >
-                        <img src={product.imageUrl} alt={product.name} width={product.size.width} height={product.size.height} className="product__image" />
+                        <img src={product.imageUrl} alt={product.name} width={product.size.width} height={product.size.height} 
+                        style={{objectFit: 'cover'}}
+                        className="product__image" />
                     </div>
                     <div className="product__info">
                         <h2 
@@ -68,7 +69,7 @@ export const ProductList: React.FC<Props> = ({ products, setProducts, id, setId 
             ))}
 
             {deleting && (
-                <ForDeleting setDeleting={setDeleting} isDelete={isDelete} setIsDelete={setIsDelete} />
+                <DeleteModal setDeleting={setDeleting} setIsDelete={setIsDelete} />
             )}
         </ul>
     )
