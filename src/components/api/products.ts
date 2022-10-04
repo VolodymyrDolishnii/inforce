@@ -10,6 +10,14 @@ export const getComments = (productId: number) => {
     return items.get<CommentType[]>(`/comments?productId=${productId}`);
 };
 
+export const postComment = (newComment: CommentType) => {
+    return items.post('/comments', newComment);
+}
+
+export const deleteComment = (commentId: number) => {
+    return items.delete(`/comments/${commentId}`);
+}
+
 export const postProduct = (product: Product) => {
     return items.post('/products', product);
 }

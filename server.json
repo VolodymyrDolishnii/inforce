@@ -11,14 +11,104 @@
       },
       "weight": "ag",
       "comments": []
+    },
+    {
+      "id": 3,
+      "imageUrl": "",
+      "name": "b",
+      "count": "b",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "bg",
+      "comments": []
+    },
+    {
+      "id": 4,
+      "imageUrl": "",
+      "name": "c",
+      "count": "c",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "cg",
+      "comments": []
+    },
+    {
+      "id": 5,
+      "imageUrl": "",
+      "name": "d",
+      "count": "d",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "dg",
+      "comments": []
+    },
+    {
+      "id": 6,
+      "imageUrl": "",
+      "name": "b",
+      "count": "b",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "bg",
+      "comments": []
+    },
+    {
+      "id": 7,
+      "imageUrl": "",
+      "name": "a",
+      "count": "a",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "ag",
+      "comments": []
+    },
+    {
+      "id": 8,
+      "imageUrl": "",
+      "name": "asas",
+      "count": "asas",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "asasg",
+      "comments": []
     }
   ],
   "comments": [
     {
+      "id": 1,
+      "productId": 2,
+      "description": "Woooow!",
+      "date": "04.10.2022"
+    },
+    {
       "id": 2,
       "productId": 2,
-      "description": "second comment",
-      "date": "0.10.2022"
+      "description": "Amazing",
+      "date": "04.10.2022"
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
     }
   ]
 }

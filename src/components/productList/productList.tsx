@@ -7,13 +7,12 @@ import { useNavigate } from 'react-router-dom';
 
 type Props = {
     products: Product[],
-    comments: CommentType[]
     setProducts: (x: Product[]) => void;
     id: number;
     setId: (x: number) => void;
 }
 
-export const ProductList: React.FC<Props> = ({ products, comments, setProducts, id, setId }) => {
+export const ProductList: React.FC<Props> = ({ products, setProducts, id, setId }) => {
     const [deleting, setDeleting] = useState(false);
     const [isDelete, setIsDelete] = useState(false);
     
@@ -56,8 +55,6 @@ export const ProductList: React.FC<Props> = ({ products, comments, setProducts, 
                             onClick={() => navigate(`/products/${product.id}`)}
                         >
                                 {product.name}</h2>
-                        {/* <p className='product__count'>Count: {product.count}</p>
-                        <p className='product__weight'>Weight: {product.weight}</p> */}
                         <button
                             onClick={() => {
                                 setDeleting(true)

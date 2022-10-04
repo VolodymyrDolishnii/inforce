@@ -1,36 +1,101 @@
 import React, { useState, useEffect } from 'react';
 import { getComments } from '../api/products';
 import { CommentType } from '../types/CommentType';
+import { postComment, deleteComment } from '../api/products';
+import moment from 'moment';
 
 type Props = {
-    productId: number | undefined;
+    comments: CommentType[],
+    setComments: (x: CommentType[]) => void;
+    addComment: (x: CommentType) => void;
+    productId: number | undefined
 }
 
-export const CommentList: React.FC<Props> = ({ productId }) => {
-    const [comments, setComments] = useState<CommentType[]>([]);
+export const CommentList: React.FC<Props> = ({ comments, setComments, addComment, productId }) => {
+    const [isAdd, setIsAdd] = useState(false);
+    const [description, setDescription] = useState('');
 
-    useEffect(() => {
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+
         if (productId) {
-            getComments(productId)
-                .then(response => setComments(response));
-        } else {
-            setComments([]);
+            const newComment = {
+                id: +(new Date().getTime()),
+                productId: productId,
+                description: description,
+                date: moment().format('h:mm, MMMM Do YYYY')
+            }
+
+            addComment(newComment);
+            postComment(newComment);
+            setDescription('');
+            setIsAdd(false);
         }
-    }, [productId])
+    }
+
+    const handleDelete = (commentId: number) => {
+        const newComments = comments.filter(comment => comment.id !== commentId);
+        setComments(newComments);
+        deleteComment(commentId);
+    }
 
     return (
-        <>  <h3>Comments: </h3>
+        <div className='comments'>
+            <h3>Comments: </h3>
             {comments.length === 0
-                ? <p>No comments yet</p>
-                : <ul>
-                {comments.map(comment => (
-                    <li key={comment.id}>
-                        <p>{comment.description}</p>
-                        <span>{comment.date}</span>
-                    </li>
-                ))}
-            </ul>
+                ? <>
+                    <p>No comments yet</p>
+                    <form className='addComment' onSubmit={handleSubmit}>
+                        <p>Enter your feedback</p>
+                        <input type="text"
+                            value={description}
+                            onChange={(event) => {
+                                setDescription(event.target.value);
+                            }}
+                            required
+                        />
+                        <button type='submit'>
+                            Confirm
+                        </button>
+                    </form>
+                </>
+                : <>
+                    <ul className='comments__list'>
+                        {comments.map((comment, index) => (
+                            <li key={comment.id} className="comments__listItem" >
+                                <span>#{index + 1}</span>
+                                <p>{comment.description}</p>
+                                <span>{comment.date}</span>
+                                <button
+                                    onClick={() => handleDelete(comment.id)}
+                                >
+                                    Delete it
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                    {isAdd === false
+                        ? <button
+                            onClick={() => setIsAdd(true)}
+                        >
+                            Add Comment
+                        </button>
+                        : <form className='addComment' onSubmit={() => handleSubmit}>
+                            <p>Enter your feedback</p>
+                            <input type="text"
+                                value={description}
+                                onChange={(event) => {
+                                    setDescription(event.target.value);
+                                }}
+                                required
+                            />
+                            <button type='submit'>
+                                Confirm
+                            </button>
+                        </form>
+                    }
+                </>
             }
-        </>
+        </div>
     );
 }
