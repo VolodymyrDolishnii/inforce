@@ -9,12 +9,13 @@ type Props = {
     setProducts: (x: Product[]) => void;
     id: number;
     setId: (x: number) => void;
+
 }
 
 export const ProductList: React.FC<Props> = ({ products, setProducts, id, setId }) => {
     const [deleting, setDeleting] = useState(false);
     const [isDelete, setIsDelete] = useState(false);
-    
+
     const navigate = useNavigate();
 
     const deleteButton = (productId: number) => {
@@ -32,45 +33,49 @@ export const ProductList: React.FC<Props> = ({ products, setProducts, id, setId 
     }, [isDelete, id])
 
     return (
-        <ul className='productList'>
-            {products.map(product => (
-                <li 
-                    key={product.id} 
-                    className="product" 
-                    style={{cursor: 'pointer'}}
-                >
-                    <div className="productList__imageContainer" style={{
-                        width: product.size.width, 
-                        height: product.size.height, 
-                        border: '1px solid black',
-                        borderRadius: '10px'}}
-                        onClick={() => navigate(`/products/${product.id}`)}    
+        <>
+            <ul className='productList'>
+                {products.map(product => (
+                    <li
+                        key={product.id}
+                        className="product"
+                        style={{ cursor: 'pointer' }}
                     >
-                        <img src={product.imageUrl} alt={product.name} width={product.size.width} height={product.size.height} 
-                        style={{objectFit: 'cover'}}
-                        className="product__image" />
-                    </div>
-                    <div className="product__info">
-                        <h2 
-                            className='product__name'
+                        <div className="productList__imageContainer" style={{
+                            width: product.size.width,
+                            height: product.size.height,
+                            border: '1px solid black',
+                            borderRadius: '10px'
+                        }}
                             onClick={() => navigate(`/products/${product.id}`)}
                         >
+                            <img src={product.imageUrl} alt={product.name} width={product.size.width} height={product.size.height}
+                                style={{ objectFit: 'cover' }}
+                                className="product__image" />
+                        </div>
+                        <div className="product__info">
+                            <h2
+                                className='product__name'
+                                onClick={() => navigate(`/products/${product.id}`)}
+                            >
                                 {product.name}</h2>
-                        <button
-                            onClick={() => {
-                                setDeleting(true)
-                                setId(product.id);
-                            }}
-                        >
-                            Delete Item
-                        </button>
-                    </div>
-                </li>
-            ))}
+                            <button
+                                onClick={() => {
+                                    setDeleting(true)
+                                    setId(product.id);
+                                }}
+                            >
+                                Delete Item
+                            </button>
+                        </div>
+                    </li>
+                ))}
 
-            {deleting && (
-                <DeleteModal setDeleting={setDeleting} setIsDelete={setIsDelete} />
-            )}
-        </ul>
+                {deleting && (
+                    <DeleteModal setDeleting={setDeleting} setIsDelete={setIsDelete} />
+                )}
+            </ul>
+
+        </>
     )
 }

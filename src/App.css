@@ -127,3 +127,10 @@ ul {
   border-radius: 10px;
   background-color: #fed766;
 }
+
+.sortField {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
