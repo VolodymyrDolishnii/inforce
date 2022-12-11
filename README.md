@@ -6,6 +6,4 @@
  3) Run the command ```json-server --watch server.json```
  4) Run the ```npm start``` command
 
-You can add, mark, delete and edit todos with my app. I also added a check for names:
-You will not be able to add a todo whose text will be empty, i.e. empty (todo.text.length !== 0).
-Also, I generate id using UUID.
+The application has the ability to add, remove and sort products. Also, each product has its own page where you can leave reviews or remove them if any.
